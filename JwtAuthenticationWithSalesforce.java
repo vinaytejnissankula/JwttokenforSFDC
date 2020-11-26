@@ -2,8 +2,8 @@
 /**
  * Write a description of class JwtAuthenticationWithSalesforce here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (Vinay Tej)
+ * @version (26/11/2020)
  */
 import org.apache.commons.codec.binary.Base64;
 import java.io.*; 
@@ -13,29 +13,6 @@ import java.text.MessageFormat;
 
 public class JwtAuthenticationWithSalesforce
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
-    /**
-     * Constructor for objects of class JwtAuthenticationWithSalesforce
-     */
-    public JwtAuthenticationWithSalesforce()
-    {
-        // initialise instance variables
-        x = 0;
-    }
-
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
-    }
     
     public static void main(String[] args) {
 
