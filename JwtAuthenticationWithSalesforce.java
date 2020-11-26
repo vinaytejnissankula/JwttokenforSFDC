@@ -44,6 +44,7 @@ public class JwtAuthenticationWithSalesforce
     String claimTemplate = "'{'\"iss\": \"{0}\", \"sub\": \"{1}\", \"aud\": \"{2}\", \"exp\": \"{3}\"'}'";
 
     try {
+        
       StringBuffer token = new StringBuffer();
 
       //Encode the JWT Header and add it to our string to sign
