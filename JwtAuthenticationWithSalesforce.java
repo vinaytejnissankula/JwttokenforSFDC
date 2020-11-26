@@ -35,11 +35,13 @@ public class JwtAuthenticationWithSalesforce
       claimArray[0] = "3MVG9GXbtnGKjXe4PAS7kcT36lyzkxtw1uXNW12J1oKCZ.wYWuxeYVWAv5VglVJ1A6KuA7PGrmlwCgPv98vI2";// Consumer key from Connected app
       claimArray[1] = "vinn@tdc.dk.erhverv.businesspf";
       claimArray[2] = "https://test.salesforce.com";
-      claimArray[3] = Long.toString( ( System.currentTimeMillis()/1000 ) + 300);
+      //claimArray[3] = Long.toString( ( System.currentTimeMillis()/1000 ) + 300);
+      claimArray[3] = "1606401017";
       //claimArray[4]= "";
       MessageFormat claims;
       claims = new MessageFormat(claimTemplate);
       String payload = claims.format(claimArray);
+      System.out.println(payload);
 
       //Add the encoded claims object
       token.append(Base64.encodeBase64URLSafeString(payload.getBytes("UTF-8")));
