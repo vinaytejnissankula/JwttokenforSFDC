@@ -15,10 +15,17 @@ const CONFIGURATION = {
 };
 
 // Read the PRIVATE_KEY from the JKS
-const { [CONFIGURATION.keystoreName]: { key: privateKey } } = jks.toPem(
-  fs.readFileSync(CONFIGURATION.keystorePath),
-  CONFIGURATION.keystorePassword
+const keystore = jks.toPem(
+    fs.readFileSync(CONFIGURATION.keystorePath),
+    CONFIGURATION.keystorePassword
 );
+
+
+if (!keystore.hasOwnProperty(CONFIGURATION.keystoreName)) {
+    throw new Error(`Unable to find the keystore from the JKS by the name "${CONFIGURATION.keystoreName}". Available keystores: ${Object.keys(keystore).map(x => `"${x}"`).join(', ')}`);
+}
+
+const { [CONFIGURATION.keystoreName]: { key: privateKey } } = keystore;
 
 // Create utility function to create a "uri friendly" base64 which salesforce understand
 function makeUriFriendlyBase64(base64) {
