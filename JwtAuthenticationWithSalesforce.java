@@ -33,7 +33,7 @@ public class JwtAuthenticationWithSalesforce
       //Create the JWT Claims Object
       String[] claimArray = new String[4];
       claimArray[0] = "3MVG9GXbtnGKjXe4PAS7kcT36lyzkxtw1uXNW12J1oKCZ.wYWuxeYVWAv5VglVJ1A6KuA7PGrmlwCgPv98vI2";// Consumer key from Connected app
-      claimArray[1] = "vinn@tdc.dk.erhverv.businesspf";
+      claimArray[1] = "onboardingportal@tdc.dk.erhverv.agileroll";
       claimArray[2] = "https://test.salesforce.com";
       //claimArray[3] = Long.toString( ( System.currentTimeMillis()/1000 ) + 300);
       claimArray[3] = "1606401017";
@@ -49,7 +49,7 @@ public class JwtAuthenticationWithSalesforce
       //Load the private key from a keystore
       KeyStore keystore = KeyStore.getInstance("JKS");
       //location of java key store containing all the certificates in Salesforce and password is the password set while exporting the certificates to key store
-      keystore.load(new FileInputStream("C:/Users/m85160/Downloads/00D1q0000008hCQ (1).jks"), "123456".toCharArray());
+      keystore.load(new FileInputStream("C:/Users/m85160/Downloads/00D1q0000008hCQ (1).jks"), "dreamteam".toCharArray());
       //get the private key for the specific certificate and password is same as above.
       PrivateKey privateKey = (PrivateKey) keystore.getKey("SelfSignedCertificate15June2019", "123456".toCharArray());
 
